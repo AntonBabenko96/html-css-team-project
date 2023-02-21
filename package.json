@@ -5,7 +5,7 @@
   "homepage": "https://AntonBabenko96.github.io/html-css-team-project",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-html-css-project/"
+    "build": "parcel build src/*.html --public-url /html-css-team-project/"
   },
   "repository": {
     "type": "git",
