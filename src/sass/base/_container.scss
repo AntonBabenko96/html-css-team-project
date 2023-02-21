@@ -1,0 +1,31 @@
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@include media-phone-resp {
+  .container {
+    width: 100%;
+  }
+}
+
+@include media-phone {
+  .container {
+    width: 480px;
+  }
+}
+
+@include media-tablet {
+  .container {
+    width: 734px;
+  }
+}
+
+@include media-desktop {
+  .container {
+    width: 1140px;
+  }
+}

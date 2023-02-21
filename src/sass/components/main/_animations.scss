@@ -1,0 +1,162 @@
+// Hero h1 sliced
+
+.sliced__wrapper {
+  display: grid;
+  place-content: center;
+  text-transform: uppercase;
+}
+
+.sliced__wrapper > span {
+  grid-area: 1/1/-1/-1;
+}
+.top {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 50%);
+  background: linear-gradient(269.46deg, #2d2a22 20.66%, #7e6d53 85.22%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bottom {
+  clip-path: polygon(0% 60%, 100% 49%, 100% 100%, 0% 100%);
+
+  background: linear-gradient(269.46deg, #2d2a22 20.66%, #7e6d53 85.22%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translateX(-0.02em);
+}
+
+// Header navigation fancy links underline
+
+.fancy {
+  &:hover,
+  &:focus {
+    position: relative;
+    white-space: nowrap;
+    &:after {
+      --deco-height: 0.3125em;
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: calc(var(--deco-height) * -0.625);
+      height: var(--deco-height);
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+      background-size: auto 100%;
+      background-repeat: round;
+      background-position: 0em;
+    }
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Merienda+One');
+
+// .snow {
+//   background-color: #000;
+//   background-image: url(https://images.unsplash.com/photo-1531972497489-8eb337acf6e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=193456e9385b553747a5e0f0cbc7badb&auto=format&fit=crop&w=1334&q=80);
+//   background-size: cover;
+//   height: 100%;
+//   background-repeat: no-repeat;
+// }
+
+.snow {
+  &:before,
+  &:after {
+    content: '';
+    position: fixed;
+    top: -3000%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(black, 0.01);
+    background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
+    background-size: 30%;
+    -webkit-animation-name: MOVE-BG;
+    -webkit-animation-duration: 500s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  }
+}
+.snow {
+  &:before {
+    filter: blur(6px);
+    opacity: 0.8;
+  }
+  &:after {
+    filter: blur(1px);
+    top: -1500%;
+    background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
+    background-size: 90%;
+    animation-duration: 200s;
+  }
+}
+.snow {
+  &:before {
+    filter: blur(4px);
+    opacity: 0.8;
+    top: -2500%;
+    background-size: 60%;
+    animation-duration: 400s;
+  }
+  &:after {
+    filter: blur(2px);
+    opacity: 0.8;
+    top: -2000%;
+    background-image: url(https://laviwebfiles.com/stage/codepen/4-2-white-snow-png.png);
+    background-size: 70%;
+    animation-duration: 300s;
+  }
+}
+
+@keyframes MOVE-BG {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(70%);
+  }
+}
+
+.snow__button {
+  position: fixed;
+  bottom: 40px;
+  left: 10px;
+
+  @include flexed;
+
+  width: 50px;
+  height: 50px;
+
+  color: rgb(233, 182, 87);
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.snow__svg {
+  fill: paleturquoise;
+}
+
+.snow-wrapper {
+  @include main-font(500, 25px, 1em);
+  @include absolute(70%, 50%);
+  position: fixed;
+  @include bordered(2px, red, 20px);
+  display: flex;
+
+  background-color: rgba(255, 255, 255, 0.5);
+
+  transition: opacity 250ms;
+
+  opacity: 0;
+  transform: translateX(-100%);
+
+  padding: 20px;
+  pointer-events: none;
+
+  z-index: 20000;
+}
+
+.snow .snow-wrapper {
+  opacity: 1;
+}
